@@ -30,7 +30,8 @@ Correct Tevin Mitchell's New York zip code to 10108.
 User.where(first_name: "Tevin", last_name: "Mithell") to find the user id
  g = Address.find(26)
  g.zip = 10108
-
+ g.save
+#Address.where(user_id: 25, State:"New York").update_all(zip:10108)
 
 How much would it cost to buy one of each piece of jewelery?
 Item.where(category: "Jewelery").sum(:price)
@@ -45,7 +46,7 @@ Order.sum(:quantity)
 How much was spent on health?
 Item.where(category: "Health") returns
 Ergonomic Plastic Chair id:1
-Order.where(item_id: 1).sum(:quantity)
+Order.where(item_id: 1).sum(:price)
 35
 
 
